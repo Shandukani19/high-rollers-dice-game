@@ -1,8 +1,10 @@
 let currentPlayer = 1;
 let player1Score = 0;
 let player2Score = 0;
+let player3Score = 0;
 let player1Name = "Player 1"; // Default name for Player 1
 let player2Name = "Player 2"; // Default name for Player 2
+let player3Name = "Player 3"; // Default name for Plaper 3
 let winningScore = 50;
 
 // display instructions
@@ -21,6 +23,7 @@ function closeInstructions() {
 function editNames() {
   const player1 = prompt("Enter player 1's name", player1Name);
   const player2 = prompt("Enter player 2's name", player2Name);
+  const player3 = prompt("Enter Player 3's name", player3Name);
 
   if (player1 !== null && payer1 !== "") {
     player1Name = player1;
@@ -30,7 +33,13 @@ function editNames() {
     player2Name = player2;
     document.getElementById("player2").textContent = player2Name;
   }
+  if (player3 !== null && player3 !== "") {
+    player3Name = player3;
+    document.getElementById("player3").textContent = player3Name;
+    document.getElementById("player3img").src = player3Img;
+  }
 }
+
 
 // set winning score
 function setScore() {
@@ -51,18 +60,22 @@ function restartGame() {
   // Reset the score
   player1Score = 0;
   player2Score = 0;
+  player3score = 0;
 
   // Reset the displayed scores
   document.getElementById("player1score").textContent = "0";
   document.getElementById("player2score").textContent = "0";
+  document.getElementById("player3score").textContent = "0";
 
   // Reset the player names
   player1Name = "Player 1";
   player2Name = "Player 2";
+  player3Name = "Player 3";
 
   // Reset displayed player names
   document.getElementById("player1").textContent = "Player 1";
   document.getElementById("player2").textContent = "Player 2";
+  document.getElementById("player3").textContent = "Player 3"
 
   // Hide instructions
   document.getElementById("hidden").style.display = "none";
@@ -80,7 +93,7 @@ function restartGame() {
     "Current Player: Player 1";
 }
 
-// rolling dice
+// rolling dice function
 function rollDice() {
   let die1 = document.getElementById("die-1");
   let die2 = document.getElementById("die-2");
@@ -107,8 +120,8 @@ function rollDice() {
     let random2 = Math.floor(Math.random() * 6) + 1;
 
     // change dice images based on random values
-    die1.src = `/images/die-${random1}.jpg`;
-    die2.src = `/images/die-${random2}.jpg`;
+    die1.src = `images/die-${random1}.jpg`;
+    die2.src = `images/die-${random2}.jpg`;
 
     // calculate the sum of the dice values
     let sum = random1 + random2;
@@ -118,19 +131,23 @@ function rollDice() {
       player1Score += sum;
       document.getElementById("player1score").textContent = player1Score;
       checkWinner(player1Score, player1Name); // Check if Player 1 is the winner
-    } else {
-      player2Score += sum;
+    } else if (currentPlayer ===2){
+      player2Score += diceSum
       document.getElementById("player2score").textContent = player2Score;
       checkWinner(player2Score, player2Name); // Check if Player 2 is the winner
-    }
+    } else if (currentPlayer === 3) {
+      player3Score += diceSum;
+      document.getElementById("player3score").textContent = player3Score;
+      checkWinner(player3Score, player3Name); // Check if Player 3 is the winner
+    }  
   }, 500); // Duration of the shake animation
 }
 
 // switch players
 function switchPlayers() {
-  currentPlayer = currentPlayer === 1 ? 2 : 1;
+  currentPlayer = currentPlayer === 1 ? 2 : (currentPlayer === 2 ? 3 : 1);
   document.getElementById("current-player").textContent = `Current Player: ${
-    currentPlayer === 1 ? player1Name : player2Name
+    currentPlayer === 1 ? player1Name : (currentPlayer === 2 ? player2Name : player3Name)
   }`;
 }
 
