@@ -4,6 +4,7 @@ let player2Score = 0;
 let player3Score = 0;
 let player1Name = "Player 1"; // Default name for Player 1
 let player2Name = "Player 2"; // Default name for Player 2
+let player3Name = "Player 3"; // Default name for Plaper 3
 let winningScore = 50;
 
 // display instructions
@@ -146,7 +147,7 @@ function rollDice() {
 function switchPlayers() {
   currentPlayer = currentPlayer === 1 ? 2 : (currentPlayer === 2 ? 3 : 1);
   document.getElementById("current-player").textContent = `Current Player: ${
-    currentPlayer === 1 ? player1Name : player2Name
+    currentPlayer === 1 ? player1Name : (currentPlayer === 2 ? player2Name : player3Name)
   }`;
 }
 
