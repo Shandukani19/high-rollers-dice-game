@@ -127,20 +127,18 @@ img {
   gap: 10px;
   align-items: center;
   padding: 30px;
+  padding-top: 5px;
 }
 
 .score {
   align-items: center;
   text-align: center;
 }
-.gameButtons {
-  width: 15vh;
-}
 
 .coders {
   color: white;
-  font-size: 18px;
-  margin-top: 80px;
+  font-size: 15px;
+  font-family: monospace;
 }
 /* main content css ends */
 
