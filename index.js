@@ -21,6 +21,7 @@ function closeInstructions() {
 function editNames() {
   const player1 = prompt("Enter player 1's name", player1Name);
   const player2 = prompt("Enter player 2's name", player2Name);
+  const player3 = prompt("Enter Player 3's name", player3Name);
 
   if (player1 !== null && payer1 !== "") {
     player1Name = player1;
@@ -30,7 +31,13 @@ function editNames() {
     player2Name = player2;
     document.getElementById("player2").textContent = player2Name;
   }
+  if (player3 !== null && player3 !== "") {
+    player3Name = player3;
+    document.getElementById("player3").textContent = player3Name;
+    document.getElementById("player3img").src = player3Img;
+  }
 }
+
 
 // set winning score
 function setScore() {
