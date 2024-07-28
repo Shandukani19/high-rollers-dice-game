@@ -36,7 +36,6 @@ function editNames() {
   if (player3 !== null && player3 !== "") {
     player3Name = player3;
     document.getElementById("player3").textContent = player3Name;
-    document.getElementById("player3img").src = player3Img;
   }
 }
 
