@@ -1,6 +1,7 @@
 let currentPlayer = 1;
 let player1Score = 0;
 let player2Score = 0;
+let player3Score = 0;
 let player1Name = "Player 1"; // Default name for Player 1
 let player2Name = "Player 2"; // Default name for Player 2
 let winningScore = 50;
