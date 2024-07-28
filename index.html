@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice-Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="header">High Rollers</h1>
+      <h2 class="header">Roll Your Way to Victory!</h2>
+      <div class="buttons">
+        <button
+          type="button"
+          class="btn btn-light"
+          onclick="displayInstructions()"
+        >
+          Instructions
+        </button>
+        <button type="button" class="btn btn-light" onclick="editNames()">
+          Edit Player Names
+        </button>
+        <button type="button" class="btn btn-light" onclick="setScore()">
+          Set Score
+        </button>
+        <button type="button" class="btn btn-light" onclick="restartGame()">
+          New Game
+        </button>
+      </div>
+    </header>
+
+    <div class="hidden" id="hidden">
+      <div class="instructions">
+        <h2>Instructions</h2>
+        <button type="button" class="btn btn-light" onclick="closeInstructions()">
+          X
+        </button>
+      </div>
+      <ul>
+        <li>Players can edit their names by clicking the "edit names" button</li>
+        <li>Set the desired winning score. Else it will be set to 50 by default</li>
+        <li>Click "Roll Dice" to roll the dice</li>
+        <li>Each player gets to play twice then pass it over</li>
+        <li>Click "Switch" to move to the next player</li>
+        <li>The sum of the dice will be the points</li>
+        <li>The first player to reach the winning score wins</li>
+        <li>Click "New Game" to restart the game</li>
+      </ul>
+    </div>
+
+    <div class="play">
+      <h1 class="startGame" id="startGame">Let's Play!</h1>
+    </div>
+
+    <div class="players">
+      <div class="firstPlayer">
+        <h1 id="player1" class="player">Player 1</h1>
+        <div class="score">
+          <h5>Score:</h5>
+          <p id="player1score">0</p>
+        </div>
+      </div>
+
+      <div class="secondPlayer">
+        <h1 id="player2" class="player">Player 2</h1>
+        <div class="score">
+          <h5>Score:</h5>
+          <p id="player2score">0</p>
+        </div>
+      </div>
+
+      <div class="thirdPlayer">
+        <h1 id="player3" class="player">Player 3</h1>
+        <div class="score">
+          <h5>Score:</h5>
+          <p id="player3score">0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="current-player">
+      <h5 id="current-player">Current Player: Player 1</h5>
+    </div>
+
+    <div class="container">
+      <div class="dice-container">
+        <img src="images/die-1.jpg" alt="dice1" class="image" id="die-1" />
+        <img src="images/die-1.jpg" alt="dice2" class="image" id="die-2" />
+      </div>
+      <div class="diceButtons">
+        <button
+          type="button"
+          class="btn btn-light gameButtons"
+          onclick="rollDice()"
+        >
+          Roll Dice
+        </button>
+        <button
+          type="button"
+          class="btn btn-light gameButtons"
+          onclick="switchPlayers()"
+        >
+          Switch
+        </button>
+      </div>
+      <p class="coders">🎲Created by Shandu, Sheila and Kamohelo🎲</p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
