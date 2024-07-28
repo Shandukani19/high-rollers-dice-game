@@ -26,6 +26,19 @@ header {
   margin-bottom: 10px;
 }
 
+@media (width: 768px) {
+  .buttons {
+    position: static;
+    transform: none;
+    margin-bottom: 10px;
+    flex-direction: column;
+  }
+
+  button {
+    margin-top: 5px;
+  }
+}
+
 .header {
   color: #ececec;
   text-align: center;
@@ -44,9 +57,16 @@ header {
   width: 550px;
   padding: 10px;
 }
+
 .instructions {
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .hidden {
+    width: 80%;
+  }
 }
 
 /* main content css starts */
