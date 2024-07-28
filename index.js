@@ -51,18 +51,22 @@ function restartGame() {
   // Reset the score
   player1Score = 0;
   player2Score = 0;
+  player3score = 0;
 
   // Reset the displayed scores
   document.getElementById("player1score").textContent = "0";
   document.getElementById("player2score").textContent = "0";
+  document.getElementById("player3score").textContent = "0";
 
   // Reset the player names
   player1Name = "Player 1";
   player2Name = "Player 2";
+  player3Name = "Player 3";
 
   // Reset displayed player names
   document.getElementById("player1").textContent = "Player 1";
   document.getElementById("player2").textContent = "Player 2";
+  document.getElementById("player3").textContent = "Player 3"
 
   // Hide instructions
   document.getElementById("hidden").style.display = "none";
@@ -80,7 +84,7 @@ function restartGame() {
     "Current Player: Player 1";
 }
 
-// rolling dice
+// rolling dice function
 function rollDice() {
   let die1 = document.getElementById("die-1");
   let die2 = document.getElementById("die-2");
@@ -107,8 +111,8 @@ function rollDice() {
     let random2 = Math.floor(Math.random() * 6) + 1;
 
     // change dice images based on random values
-    die1.src = `/images/die-${random1}.jpg`;
-    die2.src = `/images/die-${random2}.jpg`;
+    die1.src = `images/die-${random1}.jpg`;
+    die2.src = `images/die-${random2}.jpg`;
 
     // calculate the sum of the dice values
     let sum = random1 + random2;
