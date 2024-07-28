@@ -33,7 +33,11 @@ header {
     margin-bottom: 10px;
     flex-direction: column;
   }
-}    
+
+  button {
+    margin-top: 5px;
+  }
+}
 
 .header {
   color: #ececec;
@@ -59,10 +63,10 @@ header {
   justify-content: space-between;
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .hidden {
     width: 80%;
-  } 
+  }
 }
 
 /* main content css starts */
