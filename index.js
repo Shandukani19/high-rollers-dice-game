@@ -118,17 +118,21 @@ function rollDice() {
       player1Score += sum;
       document.getElementById("player1score").textContent = player1Score;
       checkWinner(player1Score, player1Name); // Check if Player 1 is the winner
-    } else {
-      player2Score += sum;
+    } else if (currentPlayer ===2){
+      player2Score += diceSum
       document.getElementById("player2score").textContent = player2Score;
       checkWinner(player2Score, player2Name); // Check if Player 2 is the winner
-    }
+    } else if (currentPlayer === 3) {
+      player3Score += diceSum;
+      document.getElementById("player3score").textContent = player3Score;
+      checkWinner(player3Score, player3Name); // Check if Player 3 is the winner
+    }  
   }, 500); // Duration of the shake animation
 }
 
 // switch players
 function switchPlayers() {
-  currentPlayer = currentPlayer === 1 ? 2 : 1;
+  currentPlayer = currentPlayer === 1 ? 2 : (currentPlayer === 2 ? 3 : 1);
   document.getElementById("current-player").textContent = `Current Player: ${
     currentPlayer === 1 ? player1Name : player2Name
   }`;
