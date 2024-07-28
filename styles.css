@@ -73,7 +73,7 @@ header {
 .startGame {
   text-align: center;
   font-size: 70px;
-  color: white;
+  color: black;
   font-family: "Permanent Marker", cursive;
 }
 
@@ -81,9 +81,6 @@ header {
   margin: 50px 0;
 }
 
-.startGame {
-  color: black;
-}
 .players {
   display: flex;
   justify-content: space-around;
