@@ -125,20 +125,20 @@ function rollDice() {
     // calculate the sum of the dice values
     let sum = random1 + random2;
 
-    // assign score to the current player
-    if (currentPlayer === 1) {
-      player1Score += sum;
-      document.getElementById("player1score").textContent = player1Score;
-      checkWinner(player1Score, player1Name); // Check if Player 1 is the winner
-    } else if (currentPlayer ===2){
-      player2Score += diceSum
-      document.getElementById("player2score").textContent = player2Score;
-      checkWinner(player2Score, player2Name); // Check if Player 2 is the winner
+    // Assign the score to the current player
+      if (currentPlayer === 1) {
+        player1Score += diceSum;
+        document.getElementById("player1score").textContent = player1Score;
+        checkWinner(player1Score, player1Name); // Check if Player 1 is the winner
+    } else if (currentPlayer === 2) {
+        player2Score += diceSum;
+        document.getElementById("player2score").textContent = player2Score;
+        checkWinner(player2Score, player2Name); // Check if Player 2 is the winner
     } else if (currentPlayer === 3) {
-      player3Score += diceSum;
-      document.getElementById("player3score").textContent = player3Score;
-      checkWinner(player3Score, player3Name); // Check if Player 3 is the winner
-    }  
+        player3Score += diceSum;
+        document.getElementById("player3score").textContent = player3Score;
+        checkWinner(player3Score, player3Name); // Check if Player 3 is the winner
+        }
   }, 500); // Duration of the shake animation
 }
 
