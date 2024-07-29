@@ -44,7 +44,7 @@ function setScore() {
   let score = prompt("Set the winning score", "50");
   if (score !== null && score !== "" && !isNaN(score) && Number(score) > 0) {
     winningScore = Number(score);
-  } else if (isNaN(score) || score <= 0) {
+  } else if (isNaN(score) || score <= 0) { // Error handling
     alert("Please enter a valid positive number");
     return;
   } else {
